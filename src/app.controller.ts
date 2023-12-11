@@ -12,12 +12,12 @@ export class AppController {
   }
 
   @Get('challenge1')
-  challenge1(): number {
+  challenge1() {
     return this.appService.challenge1();
   }
 
   @Get('challenge2')
-  challenge2(): number {
+  challenge2() {
     return this.appService.challenge2();
   }
 }
