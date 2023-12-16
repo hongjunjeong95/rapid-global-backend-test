@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -12,8 +12,8 @@ export class AppController {
   }
 
   @Get('challenge1')
-  challenge1() {
-    return this.appService.challenge1();
+  challenge1(@Query('categoryKeyword') categoryKeyword: string) {
+    return this.appService.challenge1(categoryKeyword);
   }
 
   @Get('challenge2')

@@ -11,9 +11,6 @@ async function bootstrap() {
     .setTitle('backend-test')
     .setDescription('API Specification of DH Nestjs API Server')
     .setVersion('1.0')
-    .addBearerAuth({ type: 'http' }, 'user')
-    .addBearerAuth({ type: 'http' }, 'admin')
-    .addBearerAuth({ type: 'http' }, 'client')
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
