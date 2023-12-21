@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  app1:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    container_name: app1
+    environment:
+      PORT: 3000
+    volumes:
+      - /usr/src/.yarn
+      - ./:/usr/src
+    ports:
+      - '3000:3000'
+    expose:
+      - 3000
+  app2:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    container_name: app2
+    environment:
+      PORT: 3001
+    volumes:
+      - /usr/src/.yarn
+      - ./:/usr/src
+    ports:
+      - '3001:3001'
+    expose:
+      - 3001
