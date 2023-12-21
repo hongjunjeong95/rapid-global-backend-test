@@ -9,11 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const logger = new Logger('bootstrap');
 
-  const options = new DocumentBuilder()
-    .setTitle('backend-test')
-    .setDescription('API Specification of DH Nestjs API Server')
-    .setVersion('1.0')
-    .build();
+  const options = new DocumentBuilder().setTitle('backend-test').build();
 
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document, {
